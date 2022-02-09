@@ -1,1 +1,17 @@
 ﻿
+body{
+    margin:0;
+}
+
+header{
+  background-color:red;
+  height:120px;
+}
+div{
+    background-color:Indianred;
+    height:350px;
+}
+footer {
+    background-color:LightCoral;
+    height:400px;
+}
