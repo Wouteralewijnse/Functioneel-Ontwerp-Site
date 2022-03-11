@@ -2,16 +2,33 @@
 body{
     margin:0;
 }
-
+h1{
+    margin: 0;
+}
 header{
   background-color:red;
-  height:120px;
+  height:200px;
+  width: 100vw;
 }
 div{
     background-color:Indianred;
-    height:350px;
+    height:400px;
+    width: 100vw;
+
+}
+.content{
+    display:flex;
 }
 footer {
-    background-color:LightCoral;
-    height:400px;
+    background-color:lightcoral;
+    position: fixed;
+    height:300px;
+    bottom: 0px;
+    width: 100vw;
+}
+aside{
+background-color: indianred;
+position: fixed;
+height 100px;
+bottom: 0px;
 }
