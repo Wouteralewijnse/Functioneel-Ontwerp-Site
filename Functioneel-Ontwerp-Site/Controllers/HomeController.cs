@@ -23,26 +23,27 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
         public IActionResult Contact()
         {
             return View();
         }
+        [HttpPost]
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }\
 
-[Route("contact")]
-public IActionResult Contact(string voornaam, string achternaam)
-    {
-        ViewData["voornaam"] = voornaam;
-        ViewData["achternaam"] = achternaam;
+        [Route("contact")]
+        public IActionResult Contact(string voornaam, string achternaam)
+        {
+            ViewData["voornaam"] = voornaam;
+            ViewData["achternaam"] = achternaam;
 
-        return View();
+            return View();
+        }
+
     }
+}
+
