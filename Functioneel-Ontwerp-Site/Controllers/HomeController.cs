@@ -36,13 +36,14 @@ namespace Functioneel_Ontwerp_Site.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-    }\
+        [Route("contact")]
+        public IActionResult Contact(string voornaam, string achternaam)
+        {
+            ViewData["voornaam"] = voornaam;
+            ViewData["achternaam"] = achternaam;
 
-[Route("contact")]
-public IActionResult Contact(string voornaam, string achternaam)
-    {
-        ViewData["voornaam"] = voornaam;
-        ViewData["achternaam"] = achternaam;
-
-        return View();
+            return View();
+        }
     }
+}
+
