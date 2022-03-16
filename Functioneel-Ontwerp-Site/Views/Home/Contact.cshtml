@@ -3,11 +3,12 @@
 }
 <h1>@ViewData["Title"]</h1>
 
-<form>
+<form method="post">
  voornaam: <input type="text" name="firstname" />
  achternaam: <input type="text" name="lastname" />
  email: <input type="text" name="email" />
+ telefoon: <input type="text" name="phone" />
  <input type="submit" value="opslaan" />
 </form>
 
-<p>Hallo @ViewData["firstname"]die achternaam @ViewData["lastname"] heeft</p>
+<p>Hallo @ViewData["firstname"] @ViewData["lastname"] , is het gelukt uw gegevens correct in te vullen? </p>

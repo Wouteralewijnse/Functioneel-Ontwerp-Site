@@ -36,10 +36,10 @@ namespace Functioneel_Ontwerp_Site.Controllers
         }
 
         [Route("contact")]
-        public IActionResult Contact(string voornaam, string achternaam)
+        public IActionResult Contact(string firstname, string lastname)
         {
-            ViewData["voornaam"] = voornaam;
-            ViewData["achternaam"] = achternaam;
+            ViewData["firstname"] = firstname;
+            ViewData["lastname"] = lastname;
 
             return View();
         }
