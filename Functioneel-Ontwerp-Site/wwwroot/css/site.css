@@ -10,7 +10,7 @@ header{
   height:100px;
   width: 100vw;
 }
-div{
+xxx{
     background-color:Indianred;
     width: 100vw;
     height: 800px;
@@ -42,4 +42,26 @@ header nav {
     display: flex;
     justify-content: space-evenly;
     padding: 10px;
+}
+container {
+    padding: 2rem;
+} 
+.cell {
+    background-color: #0094ff;
+    padding: 1rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 1rem;
+}
+.flex {
+    display: flex;
+    gap: 1rem;
+}
+.flex > .cell {
+    flex-grow: 1;
+}
+.flex > .cell:nth-child(2) {
+    flex-grow: 2;
 }
