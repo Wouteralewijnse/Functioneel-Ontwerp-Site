@@ -31,3 +31,15 @@ background-color: indianred;
 position: fixed;
 bottom: 0px;
 }
+
+header nav a{
+    background-color: white;
+    color: black;
+    padding: 30px;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+}
