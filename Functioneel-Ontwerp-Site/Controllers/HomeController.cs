@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
+using MySql.Data;
 
 namespace Functioneel_Ontwerp_Site.Controllers
 {
