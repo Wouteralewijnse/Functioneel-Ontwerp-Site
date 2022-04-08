@@ -53,7 +53,6 @@ container {
 .grid {
     display: grid;
     grid-template-columns: 1fr 2fr 1fr;
-    grid-gap: 1rem;
 }
 .flex {
     display: flex;
@@ -62,6 +61,16 @@ container {
 .flex > .cell {
     flex-grow: 1;
 }
-.flex > .cell:nth-child(2) {
-    flex-grow: 2;
+    .flex > .cell:nth-child(2) {
+        flex-grow: 2;
+    }
+.contactForm > div {
+    font-family: Roboto;
+}
+.contactForm label {
+    width: 200px;
+    display: inline-block;
+    min-height: 10em;
+    display: table-cell;
+    vertical-align: middle
 }
