@@ -1,14 +1,21 @@
-﻿@{
+﻿@model Person
+
+@{
     ViewData["Title"] = "Contact";
 }
 <h1>@ViewData["Title"]</h1>
 
-<form method="post">
- voornaam: <input type="text" name="firstname" />
- achternaam: <input type="text" name="lastname" />
- email: <input type="text" name="email" />
- telefoon: <input type="text" name="phone" />
+<form method="post">    
+ <div>voornaam: <input type="text" name="firstname" /></div>
+ @Html.ValidationMessageFor(m => m.Firstname)
+<div>achternaam: <input type="text" name="lastname" /></div>
+ @Html.ValidationMessageFor(m => m.Lastname)
+<div>email: <input type="text" name="email" /></div>
+ @Html.ValidationMessageFor(m => m.Email)
+ <div>telefoon: <input type="text" name="phone" /></div>
  <input type="submit" value="opslaan" />
 </form>
 
-<p>Hallo @ViewData["firstname"] @ViewData["lastname"] , is het gelukt uw gegevens correct in te vullen? </p>
+@if(Model != null){
+    <p>Hallo @Model.Firstname @Model.Lastname  </p>
+}

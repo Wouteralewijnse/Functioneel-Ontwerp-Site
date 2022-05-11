@@ -42,12 +42,21 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View();
         }
 
-
+        [Route("contact")]
         public IActionResult Contact()
         {
             return View();
         }
+
         [HttpPost]
+        [Route("contact")]
+        public IActionResult Contact(Person person)
+        {
+            if (ModelState.IsValid)
+                return Redirect("/succes");
+
+            return View(person);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
@@ -55,14 +64,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        [Route("contact")]
-        public IActionResult Contact(string firstname, string lastname)
-        {
-            ViewData["firstname"] = firstname;
-            ViewData["lastname"] = lastname;
-
-            return View();
-        }
+      
 
     }
 }
