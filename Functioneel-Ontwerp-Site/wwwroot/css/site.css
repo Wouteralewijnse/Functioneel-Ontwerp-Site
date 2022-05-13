@@ -61,16 +61,13 @@ container {
 .flex > .cell {
     flex-grow: 1;
 }
-    .flex > .cell:nth-child(2) {
+.flex > .cell:nth-child(2) {
         flex-grow: 2;
     }
-.contactForm > div {
-    font-family: Roboto;
+.contactform label {
+    width: 100px; 
 }
-.contactForm label {
-    width: 200px;
-    display: inline-block;
-    min-height: 10em;
-    display: table-cell;
-    vertical-align: middle
+.contactform .field-validation-error {
+    color: red;
+    margin-left: 10px;
 }

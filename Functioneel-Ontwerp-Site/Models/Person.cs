@@ -8,7 +8,7 @@ namespace Functioneel_Ontwerp_Site.Models
         public string Firstname { get; set; }
         [Required(ErrorMessage ="Achternaam is een verplicht veld")]
         public string Lastname { get; set; }
-        [Required(ErrorMessage = "Emailaddres is een verplicht")]
+        [Required(ErrorMessage = "Emailaddres is verplicht")]
         public string Email { get; set; }
         public string Phone { get; set; }
         public string Adress { get; set; }
