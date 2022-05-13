@@ -19,18 +19,17 @@ namespace Functioneel_Ontwerp_Site.Controllers
         {
             _logger = logger;
         }
-        public IActionResult Index()
+        public List<Product> GetAllProducts()
         {
             // alle producten ophalen
             var rows = DatabaseConnector.GetRows("select * from product");
 
             // lijst maken om alle namen in te stoppen
-            List<string> names = new List<string>();
+            List<Product> Products = new List<Product>();
 
             foreach (var row in rows)
             {
-                // elke naam toevoegen aan de lijst met namen
-                names.Add(row["naam"].ToString());
+             Product p = new Product();
             }
 
             // de lijst met namen in de html stoppen
@@ -64,7 +63,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-      
+      public List<Product> GetAllProducts ()
 
     }
 }
