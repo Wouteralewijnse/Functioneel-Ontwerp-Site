@@ -1,27 +1,15 @@
-﻿@{
-    ViewData["Title"] = "Welkom pagina";
-}
-
-<div>
-    <h1 class="display-4">Welcome</h1>
-    <p></p>
-    <p1></p1
-</div>
-
-<div class= "container flex">
-    <div class="cell">1</div>
-    <div class="cell">2</div>
-    <div class="cell">3</div>
-    <div class="cell">4</div>
-</div>
-@model List<string>
+﻿@using Functioneel_Ontwerp_Site.Database
+@model List<Product>
 @{
-    ViewData["Title"] = "Home Page";
+  ViewData["Title"] = "Home Page";
 }
+
 <div class="text-center">
-<h1> Alle namen!</h1>
-@foreach(string naam in Model)
-{
-    <p>@naam</p>
-}
+  <h1 class="display-4">Welcome</h1>
+  <ul>
+    @foreach (var product in Model)
+    {
+      <li>@product.Naam - @product.Prijs - @product.Beschikbaarheid</li>
+    }
+  </ul>
 </div>

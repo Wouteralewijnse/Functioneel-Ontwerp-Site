@@ -14,12 +14,22 @@ namespace Functioneel_Ontwerp_Site.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private List<Product> products;
 
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-        public List<Product> GetAllProducts()
+        public IActionResult Index()
+        {
+            // lijst met producten ophalen
+            var products = GetAllProducts();
+
+            // de lijst met producten in de html stoppen
+            return View(products);
+        }
+
+            public List<Product> GetAllProducts()
         {
             // alle producten ophalen
             var rows = DatabaseConnector.GetRows("select * from product");
@@ -29,11 +39,17 @@ namespace Functioneel_Ontwerp_Site.Controllers
 
             foreach (var row in rows)
             {
-             Product p = new Product();
+            Product p = new Product();
+                p.Naam = row["Naam"].ToString();
+                p.Prijs = row["prijs"].ToString();
+                p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
+                p.Id = Convert.ToInt32(row["id"]);
+
+                products.Add(p);
             }
 
             // de lijst met namen in de html stoppen
-            return View(names);
+            return products;
         }
 
         public IActionResult Privacy()
@@ -63,7 +79,10 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-      public List<Product> GetAllProducts ()
+   
+      {
+            
+
 
     }
 }
