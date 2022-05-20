@@ -29,18 +29,18 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(products);
         }
 
-            public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts()
         {
             // alle producten ophalen
             var rows = DatabaseConnector.GetRows("select * from product");
 
             // lijst maken om alle namen in te stoppen
-            List<Product> Products = new List<Product>();
+            List<Product> products = new List<Product>();
 
             foreach (var row in rows)
             {
-            Product p = new Product();
-                p.Naam = row["Naam"].ToString();
+                Product p = new Product();
+                p.Naam = row["naam"].ToString();
                 p.Prijs = row["prijs"].ToString();
                 p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
                 p.Id = Convert.ToInt32(row["id"]);
@@ -78,12 +78,6 @@ namespace Functioneel_Ontwerp_Site.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-   
-      {
-            
-
-
     }
 }
 
