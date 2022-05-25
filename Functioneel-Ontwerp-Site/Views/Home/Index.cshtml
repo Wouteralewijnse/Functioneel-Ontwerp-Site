@@ -1,15 +1,15 @@
 ﻿@using Functioneel_Ontwerp_Site.Database
-@model List<Product>
+@model List<Festival>
 @{
-  ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-  <h1 class="display-4">Welcome</h1>
-  <ul>
-    @foreach (var product in Model)
+    <h1 class="display-4">Welcome</h1>
+
+    @foreach (var festival in Model)
     {
-      <li>@product.Naam - @product.Prijs - @product.Beschikbaarheid</li>
+        <a href="/festival/@festival.Id">@festival.Naam</a>
     }
-  </ul>
+
 </div>

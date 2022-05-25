@@ -14,7 +14,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private List<Product> products;
+        private List<Festival> products;
 
         public HomeController(ILogger<HomeController> logger)
         {
@@ -29,20 +29,19 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(products);
         }
 
-        public List<Product> GetAllProducts()
+        public List<Festival> GetAllProducts()
         {
             // alle producten ophalen
-            var rows = DatabaseConnector.GetRows("select * from product");
+            var rows = DatabaseConnector.GetRows("select * from festival");
 
             // lijst maken om alle namen in te stoppen
-            List<Product> products = new List<Product>();
+            List<Festival> products = new List<Festival>();
 
             foreach (var row in rows)
             {
-                Product p = new Product();
+                Festival p = new Festival();
                 p.Naam = row["naam"].ToString();
-                p.Prijs = row["prijs"].ToString();
-                p.Beschikbaarheid = Convert.ToInt32(row["beschikbaarheid"]);
+                p.Beschrijving = row["beschrijving"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
 
                 products.Add(p);
