@@ -4,12 +4,16 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
+<div class="festivals">
     <h1 class="display-4">Welcome</h1>
 
     @foreach (var festival in Model)
     {
-        <a href="/festival/@festival.Id">@festival.Naam</a>
+        <div class="festival">
+            <a href="/festival/@festival.Id">@festival.Naam</a>
+            <img src="@festival.Afbeelding"/>
+        </div>
     }
+
 
 </div>

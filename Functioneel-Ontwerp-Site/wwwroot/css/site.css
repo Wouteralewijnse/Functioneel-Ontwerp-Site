@@ -71,3 +71,12 @@ container {
     color: red;
     margin-left: 10px;
 }
+
+.festivals{
+    display:flex;
+    widht:500px;
+}
+
+.festival{
+    background-color:red;
+}

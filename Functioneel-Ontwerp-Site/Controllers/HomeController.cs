@@ -42,6 +42,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
                 Festival p = new Festival();
                 p.Naam = row["naam"].ToString();
                 p.Beschrijving = row["beschrijving"].ToString();
+                p.Afbeelding = row["Afbeelding"].ToString();
                 p.Id = Convert.ToInt32(row["id"]);
 
                 products.Add(p);
