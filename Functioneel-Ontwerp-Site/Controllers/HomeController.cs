@@ -51,7 +51,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
             // de lijst met namen in de html stoppen
             return products;
         }
-
+        [Route("Privacy")]
         public IActionResult Privacy()
         {
             return View();
@@ -61,7 +61,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
         public IActionResult Contact()
         {
             return View();
-        }
+        }   
 
         [HttpPost]
         [Route("contact")]
@@ -73,6 +73,17 @@ namespace Functioneel_Ontwerp_Site.Controllers
             return View(person);
         }
 
+        [Route("Succes")]
+        public IActionResult Succes()
+        {
+            return View();
+        }
+        
+        [Route("Huisregels")]
+        public IActionResult Huisregels()
+        {
+            return View();
+        }
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
