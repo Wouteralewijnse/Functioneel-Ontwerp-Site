@@ -72,11 +72,16 @@ container {
     margin-left: 10px;
 }
 
-.festivals{
-    display:flex;
-    widht:500px;
+.festivals img{
+    width:20%;
+    height: 140px;
+    display: flex;
+    border: 1px solid black;
 }
 
 .festival{
     background-color:red;
+}
+.Huisregels{
+background-color: red;
 }
