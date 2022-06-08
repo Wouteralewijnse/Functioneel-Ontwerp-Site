@@ -69,6 +69,7 @@ namespace Functioneel_Ontwerp_Site.Controllers
         {
             if (ModelState.IsValid)
                 return Redirect("/succes");
+          
 
             return View(person);
         }
