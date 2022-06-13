@@ -56,14 +56,14 @@ namespace Functioneel_Ontwerp_Site.Database
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, email, bericht) VALUES(?voornaam, ?achternaam, ?email, ?bericht)", conn);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO klant(voornaam, achternaam, emailadres, bericht) VALUES(?voornaam, ?achternaam, ?emailadres, ?bericht)", conn);
 
                 // Elke parameter moet je handmatig toevoegen aan de query
                 cmd.Parameters.Add("?voornaam", MySqlDbType.Text).Value = person.Firstname;
                 cmd.Parameters.Add("?achternaam", MySqlDbType.Text).Value = person.Lastname;
-                cmd.Parameters.Add("?email", MySqlDbType.Text).Value = person.Email;
+                cmd.Parameters.Add("?emailadres", MySqlDbType.Text).Value = person.Email;
                 cmd.Parameters.Add("?bericht", MySqlDbType.Text).Value = person.Description;
-                cmd.ExecuteNonQuery();
+                _ = cmd.ExecuteNonQuery();
             }
 
         }

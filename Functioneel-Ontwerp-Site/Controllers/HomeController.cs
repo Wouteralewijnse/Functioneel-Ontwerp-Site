@@ -68,7 +68,12 @@ namespace Functioneel_Ontwerp_Site.Controllers
         public IActionResult Contact(Person person)
         {
             if (ModelState.IsValid)
+            {
+                // todo: ook echt opslaan
+                DatabaseConnector.SavePerson(person);
+                
                 return Redirect("/succes");
+            }
           
 
             return View(person);
